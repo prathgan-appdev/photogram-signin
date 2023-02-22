@@ -3,16 +3,17 @@
 <dl>
   <dt>ID</dt>
   <dd><%= @user.id %></dd>
+    
+    <dt>Edit user</dt>
+    <dd>
+      <form action="/update_user/<%= @user.id %>" >
+        <label for="browser_username">Username</label>
+        <input id="browser_username" type="text" name="input_username" placeholder="Enter a username..." value="<%= @user.username %>">
 
-  <dt>Edit user</dt>
-  <dd>
-    <form action="/update_user/<%= @user.id %>" >
-      <label for="browser_username">Username</label>
-      <input id="browser_username" type="text" name="input_username" placeholder="Enter a username..." value="<%= @user.username %>">
-
-      <button>Update user</button>
-    </form>
-  </dd>
+        <button>Update user</button>
+      </form>
+    </dd>
+  
 </dl>
 
 <h2>Own photos (<%= @user.own_photos.count %>)</h2>
